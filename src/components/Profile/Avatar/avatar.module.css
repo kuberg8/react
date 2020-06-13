@@ -1,0 +1,27 @@
+.box_avatar {
+	background: white;
+	border: 1px solid #d7d8db;
+	border-radius: 5px;
+	
+	width: 100%;
+	min-height: 200px;
+	height: auto;
+}
+
+
+
+.avatar {
+	width: 85%;
+	height: auto;
+
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.avatar img {
+	width: 100%;
+	height: auto;
+
+	border-radius: 3px;
+}

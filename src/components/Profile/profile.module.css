@@ -1,0 +1,42 @@
+.Profile {
+  display: flex;
+  margin-top: 52px;
+  width: 100%;
+}
+
+.Profile input {
+	outline: none;
+}
+
+
+.col1 {
+	display: block;
+	width: 230px;
+
+	
+}
+
+.avatar {
+	background: white;
+	border: 1px solid #d7d8db;
+	border-radius: 5px;
+	
+	text-align: center;
+
+	height: auto;
+}
+
+.avatar img {
+	width: 85%;
+	padding: 10px;
+}
+
+
+
+
+
+.col2 {
+	display: block;
+	width: 574px;
+	margin-left: 10px;
+}

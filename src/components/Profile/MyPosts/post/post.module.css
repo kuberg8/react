@@ -1,0 +1,12 @@
+.post {
+	background: white;
+	border: 1px solid #d7d8db;
+	border-radius: 5px;
+
+	margin-bottom: 10px;
+}
+
+
+.name {
+	font-weight: bold;
+}

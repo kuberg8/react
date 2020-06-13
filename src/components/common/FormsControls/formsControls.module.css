@@ -1,0 +1,12 @@
+.form input {
+	outline: none;
+}
+
+
+.form.error input {
+	border: 1px solid red;
+}
+
+.form span {
+	color: red;
+}

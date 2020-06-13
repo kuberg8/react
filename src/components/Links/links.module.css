@@ -1,0 +1,29 @@
+.links {
+  display: block;
+  margin-top: 52px;
+  margin-right: 20px;
+  width: 149px;
+  font-size: 12.5px;
+}
+
+.links a {
+  text-decoration: none;
+}
+
+.item {
+  height: 28px;
+  cursor: pointer;
+  line-height: 28px;
+  color: #285473;
+  transition: font-weight 0.1s linear;
+}
+
+
+
+.item:hover {
+  background-color: rgba(81,129,184, 0.1);
+}
+
+a.active {
+  font-weight: bold;
+}

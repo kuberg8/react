@@ -1,0 +1,39 @@
+.header {
+  width: 100%;
+  background: #4a76a8;
+  position: fixed;
+  top: 0;
+  color: white;
+  font-size: 30px;
+
+  z-index: 1000;
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.container a {
+  color: white;
+  font-size: 20px;
+}
+
+
+
+.logout {
+  right: 2px;
+  top: 5px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+}
+
+.logout:hover {
+  color: #edeef0;
+  cursor: pointer;
+}

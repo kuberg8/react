@@ -1,0 +1,16 @@
+body {
+  background: #edeef0;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  display: flex;
+}
+
+
+.Loading {
+	display: flex;
+	margin-top: 52px;
+	width: 100%;
+}

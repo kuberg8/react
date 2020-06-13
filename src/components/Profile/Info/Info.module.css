@@ -1,0 +1,33 @@
+.info {
+	background: white;
+	border: 1px solid #d7d8db;
+	border-radius: 5px;
+	color: #3f3f3f;
+
+	height: 200px;
+
+	padding: 10px;
+	box-sizing: border-box;
+	flex-wrap: wrap;
+}
+
+
+.preloader {
+	height: 100px;
+	margin-left: 20px;
+}
+
+
+
+.name {
+	font-size: 25px;
+	color:#3f3e46;
+}
+
+
+
+.info_item {
+	white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}

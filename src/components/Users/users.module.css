@@ -1,0 +1,77 @@
+.users {
+	display: block;
+	margin-top: 52px;
+ 	width: 60%;
+
+ 	height: 85vh;
+ 	overflow: auto;
+
+ 	background: white;
+	border: 1px solid #d7d8db;
+	border-radius: 5px;
+
+	position: relative;
+}
+
+
+.users input {
+	border: none;
+	border-bottom: 1px solid #d7d8db;
+	width: 100%;
+	outline: none;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+
+.users_item {
+	display: flex;
+	height: 100px;
+	border-bottom: 1px solid #d7d8db;
+	margin: 20px 30px 20px 30px;
+
+	position: relative;
+}
+
+
+.ava {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+
+.status {
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: gray;
+	font-style: italic;
+
+	font-size: 14px;
+}
+
+
+.location {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+
+.button {
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+}
+
+.button button {
+	background: #e5ebf1;
+	border: none;
+	padding: 10px 15px;
+	border-radius: 5px;
+	color: #55677d;
+	cursor: pointer;
+}
+
