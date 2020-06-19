@@ -11,11 +11,16 @@ function Profile(props) {
   return (
     <div className={cl.Profile}>
     	<div className={cl.col1}>
-    		<Avatar profile={props.profile} />
+    		<Avatar profile={props.profile} isOwner={props.isOwner} savePhoto={props.savePhoto} />
     	</div>
 
     	<div className={cl.col2}>
-    		<Info profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
+    		<Info 
+                profile={props.profile} 
+                isOwner={props.isOwner} 
+                status={props.status} 
+                updateStatus={props.updateStatus}
+                saveInfo={props.saveInfo} />
     		<MyPostsContainer />
     	</div>
     </div>

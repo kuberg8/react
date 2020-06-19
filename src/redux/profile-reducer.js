@@ -1,9 +1,13 @@
 import {usersAPI} from '../api/api.js' 
 import {profileAPI} from '../api/api.js'
+import {stopSubmit} from 'redux-form'
+
 
 const ADD_POST = 'ADD-POST'
 const SET_USER_PROFILE = 'SET-USER-PROFILE'
 const SET_STATUS = "SET-STATUS"
+const SET_PHOTO = "SET-PHOTO"
+const SET_INFO = "SET_INFO"
 
 
 
@@ -48,9 +52,19 @@ function profileReducer(state = initialState, action) {
 			...state,
 			status: action.status,
 		}
+	} else if(action.type === SET_PHOTO) {
+
+		return {
+			...state,
+			userProfile: {...state.userProfile, photos: action.photos}
+		}
+	} else if(action.type === SET_INFO) {
+		
+		return {
+			...state,
+			userProfile: {...state.userProfile, "???": action.info}
+		}
 	}
-
-
 
 	return state;
 }
@@ -84,6 +98,21 @@ function setStatusAC(status) {
 }
 
 
+function setPhotoAC(photos) {
+	return {
+		type: SET_PHOTO,
+		photos 
+	}
+}
+
+function setInfoAC(info) {
+	return {
+		type: SET_INFO,
+		info 
+	}
+}
+
+
 export const getStatusThunkCreator = (userId) => {
 	return async (dispatch) => { 
 		let response = await profileAPI.getStatus(userId)
@@ -95,7 +124,7 @@ export const getStatusThunkCreator = (userId) => {
 export const updateStatusThunkCreator = (status) => {
 	return async (dispatch) => { 
 		let response = await profileAPI.updateStatus(status)
-		if(response.data.resultCod === 0) {
+		if(response.data.resultCode === 0) {
 			dispatch( setStatusAC(status) ) 
 		}
 	}
@@ -110,6 +139,28 @@ export const getUserProfileThunkCreator = (userId) => {
 	}
 }
 
+
+export const savePhotoThunkCreator = (file) => {
+	return async (dispatch) => { 
+		let response = await profileAPI.savePhoto(file)
+		if(response.data.resultCode === 0) {
+			dispatch( setPhotoAC(response.data.data.photos) ) 
+		}
+	}
+}
+
+
+export const saveInfoThunkCreator = (info) => {
+	return async (dispatch, getState) => { 
+		let userId = getState().auth.id
+		let response = await profileAPI.saveInfo(info)
+		if(response.data.resultCode === 0) {
+			dispatch( getUserProfileThunkCreator(userId) )  
+		} else {
+			dispatch( stopSubmit("profile", {_error: "wrong URL"}) )
+		}
+	}
+}
 
 
 

@@ -17,11 +17,23 @@ function Avatar(props) {
 		)
 	} 
 
+
+	let pushAvatar = (e) => {
+		if(e.target.files.length) {
+			props.savePhoto(e.target.files[0])
+		}
+	}
+
   return (
-    <div className={av.box_avatar}>
- 		<div className={av.avatar}>
- 			<img src={props.profile.photos.large ? props.profile.photos.large : avaNull} />
- 		</div>
+  	<div>
+	    <div className={av.box_avatar}>
+	 		<div className={av.avatar}>
+	 			<img src={props.profile.photos.large ? props.profile.photos.large : avaNull} />
+	 		</div>
+	    </div>
+  		<div>
+ 			{props.isOwner ? <input type="file" onChange={pushAvatar} /> : null}
+ 		</div>   	
     </div>
   )
 }

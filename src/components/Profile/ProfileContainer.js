@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {getUserProfileThunkCreator, getStatusThunkCreator, updateStatusThunkCreator} from '../../redux/profile-reducer.js'
+import {getUserProfileThunkCreator, getStatusThunkCreator, updateStatusThunkCreator, savePhotoThunkCreator, saveInfoThunkCreator} from '../../redux/profile-reducer.js'
 import ProfileAPIComponent from './ProfileAPIComponent.js'
 
 import {connect} from 'react-redux'
@@ -24,6 +24,8 @@ let mapDispatchToProps = (dispatch) => {
     	getUserProfile: (userId) => { dispatch(getUserProfileThunkCreator(userId) ) },
         getStatus: (userId) => { dispatch(getStatusThunkCreator(userId) ) },
         updateStatus: (status) => { dispatch(updateStatusThunkCreator(status) ) },
+        savePhoto: (file) => { dispatch(savePhotoThunkCreator(file) ) },
+        saveInfo:(info) => { dispatch(saveInfoThunkCreator(info) )}
     }
 }
 

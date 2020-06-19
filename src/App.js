@@ -88,7 +88,7 @@ let AppContainer = compose(
 let MainApp = (props) => {
 	return(
 	  	<Provider store={store}>
-	  		<BrowserRouter>
+	  		<BrowserRouter basename={process.env.PUBLIC_URL}>
 		    	<AppContainer />
 		    </BrowserRouter>
 		</Provider>

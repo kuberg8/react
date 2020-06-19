@@ -8,13 +8,14 @@ import {connect} from 'react-redux'
 
 let mapStateToProps = (state) => {
 	return {
-		isAuth: state.auth.isAuth
+		isAuth: state.auth.isAuth,
+		captchaUrl: state.auth.captchaUrl
 	}
 }
 
 let mapDispatchToProps = (dispatch) => {
 	return {
-		login: (email, password, rememberMe) => { dispatch( loginThunkCreator(email, password, rememberMe) ) },
+		login: (email, password, rememberMe, captcha) => { dispatch( loginThunkCreator(email, password, rememberMe, captcha) ) },
 		logout: () => { dispatch( logoutThunkCreator() ) }
 	}
 }

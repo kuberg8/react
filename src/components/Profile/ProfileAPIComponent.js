@@ -8,22 +8,33 @@ import * as axios from 'axios'
 
 class ProfileAPIComponent extends PureComponent {
 
-
-
-	componentDidMount() {
+	refreshProfile() {
 		let userId = this.props.match.params.userId
 		if(!userId) {
 			userId = this.props.AuthUserId
 		}
 		this.props.getUserProfile(userId)
-		this.props.getStatus(userId)
+		this.props.getStatus(userId)		
+	}
+
+
+	componentDidMount() {
+		this.refreshProfile()
+	}
+
+
+	componentDidUpdate(prevProps, prevState, snapshot) {
+		if(this.props.match.params.userId != prevProps.match.params.userId) {
+			this.refreshProfile()		
+		}
+
 	}
 
 
 	render() {
 		console.log("render")
 	  return (
-	    <Profile {...this.props} /*передает все пропсы разом*/ />
+	    <Profile {...this.props} /*передает все пропсы разом*/ isOwner={!this.props.match.params.userId} />
 	  )
 	}
 }

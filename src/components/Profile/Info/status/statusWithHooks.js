@@ -28,7 +28,7 @@ function  ProfileStatusWithHooks(props) {
 
 	return (
 		<div className={st.status}>
-			{editMode 
+			{(props.isOwner ? editMode : false) 
 				?  
 				<div className={st.status_editMode}>
 					<input 
@@ -39,7 +39,7 @@ function  ProfileStatusWithHooks(props) {
 				</div>
 				: 
 				<div 
-					className={st.status_item}
+					className={props.isOwner ? st.status_item : st.status_not_yours}
 					onClick={activateEditMode} >
 						{props.status}
 				</div>

@@ -18,6 +18,12 @@
 	background:  #e7e8ec;
 }
 
+.status_not_yours {
+	height: 15px;
+	line-height: 15px;
+	padding: 5px;
+}
+
 
 
 .status_editMode {

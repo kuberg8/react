@@ -4,11 +4,12 @@
 	border-radius: 5px;
 	color: #3f3f3f;
 
-	height: 200px;
+	height: 210px;
 
 	padding: 10px;
 	box-sizing: border-box;
 	flex-wrap: wrap;
+
 }
 
 
@@ -26,8 +27,65 @@
 
 
 
-.info_item {
+.about {
 	white-space: nowrap; 
     overflow: hidden; 
     text-overflow: ellipsis;
+}
+
+
+.info_item {
+	position: relative;
+}
+
+
+.edit {
+	position: absolute;
+	right: 10px;
+	top: 0;
+}
+
+
+
+.ProfileFormData {
+	position: fixed;
+	top: 25%;
+	background: white;
+	border-radius: 10px;
+	border: 1px solid gray;
+	width: 400px;
+	height: 130px;
+	padding: 5px;
+	z-index: 1;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+	animation: animatetop 0.5s;
+}
+
+@keyframes animatetop {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1; 
+	}
+}
+
+.ProfileFormData input {
+	border: none;
+	border-bottom: 1px solid gray;
+}
+
+.save {
+	position: absolute; 
+	right: 5px;
+	top: 5px;
+}
+
+
+
+.error {
+	color: red;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
 }
