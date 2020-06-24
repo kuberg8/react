@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {setCurrentPageAC, getUsersThunkCreator, followThunkCreator, unfollowThunkCreator} from '../../redux/users-reducer.js'
-import {getUsers, getPageSize, getTotalUsersCount, getCurrentPage, getIsFetching, getFollowingProcess} from '../../redux/users-selectors.js'
+import {getUsers, getUsersSuperSelector, getPageSize, getTotalUsersCount, getCurrentPage, getIsFetching, getFollowingProcess} from '../../redux/users-selectors.js'
 import UsersAPIComponent from './UsersAPIComponent.js'
 
 import {connect} from 'react-redux'

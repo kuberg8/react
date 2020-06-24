@@ -4,6 +4,7 @@ import {stopSubmit} from 'redux-form'
 
 
 const ADD_POST = 'ADD-POST'
+const DELETE_POST = 'DELETE-POST'
 const SET_USER_PROFILE = 'SET-USER-PROFILE'
 const SET_STATUS = "SET-STATUS"
 const SET_PHOTO = "SET-PHOTO"
@@ -29,7 +30,7 @@ function profileReducer(state = initialState, action) {
 
 	if(action.type === ADD_POST) {
 		let newPost = {
-		id: 4,
+		id: 0,
 		name: "Rick",
 		text: action.postText,
 		likeCounts: 0,
@@ -40,13 +41,20 @@ function profileReducer(state = initialState, action) {
 			postsData: [newPost, ...state.postsData],
 		};
 
-	}  else if(action.type === SET_USER_PROFILE) {
+	}  else if(action.type === DELETE_POST) {
+
+		state.postsData.splice(action.id, 1)
+		return {
+			...state,
+			postsData: [...state.postsData],
+		}
+	} else if(action.type === SET_USER_PROFILE) {
 
 		return {
 			...state,
 			userProfile: action.userProfile,
 		}
-	} else if(action.type === SET_STATUS) {
+	}else if(action.type === SET_STATUS) {
 
 		return {
 			...state,
@@ -78,6 +86,14 @@ export function addPostActionCreator (text) {
 	return {
 		type: ADD_POST,
 		postText: text,
+	}
+}
+
+
+export function deletePostActionCreator (id) {
+	return {
+		type: DELETE_POST,
+		id: id
 	}
 }
 

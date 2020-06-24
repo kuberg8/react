@@ -4,22 +4,22 @@ import fr from './friends.module.css';
 import userPhoto from '../../assets/img/ava.png'
 
 import * as axios from 'axios'
-import {Redirect} from 'react-router-dom'
+import {NavLink} from 'react-router-dom';
+
 
 
 function Friends_item(props) {
 	return (
 		<div className={fr.friends_item}>
-			<img src={props.photo} className={fr.ava} />
+			<NavLink to={'/profile/' + props.id}>
+				<img src={props.photo} className={fr.ava} />
+			</NavLink>
 			{props.name}
 			<div className={fr.status}>
 				"{props.status}"
 			</div>
 			<div className={fr.location}>
 				{props.location}
-			</div>
-			<div className={fr.button}>
-				<button onClick={ () => {} }>Удалить из друзей</button>
 			</div>
 		</div>
 	)
@@ -40,28 +40,19 @@ function Friends(props) {
 		return (<Friends_item 
 			name={f.name} 
 			key={f.id}
+			id={f.id}
 			status={f.status} 
 			location={f.location}
-			photo={f.photos.small != null ? f.photos.small : userPhoto} />)
+			photo={f.photos.small != null ? f.photos.small : userPhoto}
+			followed={f.followed}
+			if={f.id} />)
 	});
 
 
-	let newUFriendsElement = React.createRef();
-
-
-	function onFriendsChange() {
-		let text = newUFriendsElement.current.value
-		props.updateNewFriendSeekText(text);
-	}
 
 
 	return (
 		<div className={fr.friends}>
-			<input 
-				onChange={onFriendsChange} 
-				value={props.newFriendSeekText} 
-				placeholder="Поиск"
-				ref={newUFriendsElement} />
 			{friendElements}
 		</div>
 	)

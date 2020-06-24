@@ -32,7 +32,12 @@ function Avatar(props) {
 	 		</div>
 	    </div>
   		<div>
- 			{props.isOwner ? <input type="file" onChange={pushAvatar} /> : null}
+ 			{props.isOwner ? 
+ 				<div>
+ 					<input className={av.file} type="file" onChange={pushAvatar} />
+ 					<button className={av.button}>Загрузить аватарку</button>
+ 				</div>
+ 				: null}
  		</div>   	
     </div>
   )

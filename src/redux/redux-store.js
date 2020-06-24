@@ -1,8 +1,8 @@
 import {applyMiddleware, combineReducers, createStore, compose} from "redux";
 
 import profileReducer from './profile-reducer.js'
-import dialogueReducer from './dialogue-reducer.js'
 import friendsReducer from './friends-reducer.js'
+import dialogueReducer from './dialogue-reducer.js'
 import usersReducer from './users-reducer.js'
 import authReducer from './auth-reducer.js'
 import appReducer from './app-reducer.js'
@@ -13,8 +13,8 @@ import {reducer as formReducer} from 'redux-form'
 
 let reducers = combineReducers({
 	profile: profileReducer,
-	dialogue: dialogueReducer,
 	friends: friendsReducer,
+	dialogue: dialogueReducer,
 	users: usersReducer,
 	auth: authReducer,
 	form: formReducer,

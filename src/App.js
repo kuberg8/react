@@ -6,14 +6,13 @@ import HeaderContainer from "./components/Header/HeaderContainer.js"
 import Links from "./components/Links/Links.js"
 import ProfileContainer from "./components/Profile/ProfileContainer.js"
 //import Dialogue from "./components/Dialogue/Dialogue.js" 
-import FriendsContainer from "./components/Friends/FriendsContainer.js"
 //import UsersContainer from "./components/Users/UsersContainer.js"
 import LoginContainer from "./components/Login/LoginContainer.js"
-import Music from "./components/Music/Music.js"
+import FriendsContainer from "./components/Friends/FriendsContainer.js"
 
 import preloader from "./assets/img/preloader.svg"
 
-import {Route} from "react-router-dom"
+import {Route, Switch} from "react-router-dom"
 import {connect} from 'react-redux'
 import {compose} from 'redux'
 import {withRouter} from 'react-router-dom'
@@ -49,17 +48,21 @@ class App extends React.Component {
 			  <div className="container">
 			    <Links />
 
-			    <Route path="/profile/:userId?" render={ () => <ProfileContainer />} />
+			    <Switch>
 
-			    <Route path="/friends" render={ () => <FriendsContainer />} />
-			    
-			    <Route path="/dialogue" render={withSuspense(Dialogue)} />
+				    <Route path="/profile/:userId?" render={ () => <ProfileContainer />} />
+				    
+				    <Route path="/dialogue" render={withSuspense(Dialogue)} />
 
-			    <Route path="/music" render={ () => <Music />} />
+				    <Route path="/friends" render={ () => <FriendsContainer />} />
 
-			    <Route path="/users" render={withSuspense(UsersContainer)} />
+				    <Route path="/users" render={withSuspense(UsersContainer)} />
 
-			    <Route path="/login" render={ () => <LoginContainer />} />
+				    <Route path="/login" render={ () => <LoginContainer />} />
+
+				    <Route exact path="/" render={ () => <ProfileContainer />} />
+
+			    </Switch>
 			  </div>
 			</div>
 		);

@@ -31,3 +31,51 @@
 	bottom: 0;
 	color: gray;
 }
+
+
+.delete {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+
+	display: gray;
+	width: 13px;
+	height: 3px;
+	cursor: pointer;
+}
+
+
+
+.delete:after {
+	content: "";
+	width: 100%;
+	height: 3px;
+
+	top: 2px;
+
+	background-color: gray;
+	position: absolute;
+	transform: rotate(45deg);
+}
+
+.delete:before {
+	content: "";
+	width: 100%;
+	height: 3px;
+
+	top: 2px;
+
+	background-color: gray;
+	position: absolute;
+	transform: rotate(-45deg);
+}
+
+
+.delete:hover:after {
+	background: black;
+}
+
+
+.delete:hover:before {
+	background: black;
+}

@@ -21,7 +21,7 @@ function Profile(props) {
                 status={props.status} 
                 updateStatus={props.updateStatus}
                 saveInfo={props.saveInfo} />
-    		<MyPostsContainer />
+    		<MyPostsContainer isOwner={props.isOwner} />
     	</div>
     </div>
   )

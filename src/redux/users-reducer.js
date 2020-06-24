@@ -11,7 +11,7 @@ const TOGGLE_IS_FOLLOWING_PROCESS = 'TOGGLE-IS-FOLLOWING-PROCRSS'
 
 
 let initialState = {
-	usersData:[	],
+	usersData:[],
 	pageSize: 5,
 	totalUsersCount: 0,
 	currentPage: 1,

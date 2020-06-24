@@ -34,7 +34,14 @@ const PostReduxForm = reduxForm({
 function MyPosts(props) {
 
 	let postsElements = props.postsData.map( (p) => {
-		return (<Post name={p.name} key={p.id} text={p.text} likeCounts={p.likeCounts} />)
+		return (<Post 
+			name={p.name} 
+			id={p.id} 
+			key={p.id} 
+			text={p.text} 
+			likeCounts={p.likeCounts} 
+			deletePost={props.deletePost}
+			isOwner={props.isOwner} />)
 	})
 
 

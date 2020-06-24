@@ -1,7 +1,6 @@
 import React from 'react';
 import lc from './dialogue_list.module.css';
 import {NavLink} from 'react-router-dom';
-import {Redirect} from 'react-router-dom'
 import {Field, reduxForm} from 'redux-form'
 
 

@@ -1,4 +1,3 @@
-const UPDATE_NEW_FRIENDS_SEEK_TEXT = 'UPDATE-NEW-FRIENDS-SEEK-TEXT'
 const SET_FRIENDS = 'SET-FRIENDS'
 
 
@@ -7,19 +6,15 @@ let initialState = {
 	friendsData : [
 	],
 
-	newFriendSeekText: "",
+	isFetching: false,
+	followingProcess: [],
 }
 
 
 
 function friendsReducer(state = initialState, action) {
 	
-	if(action.type === UPDATE_NEW_FRIENDS_SEEK_TEXT) {
-		return {
-			...state,
-			newFriendSeekText: action.newText
-		};
-	} else if(action.type === SET_FRIENDS) {
+	if(action.type === SET_FRIENDS) {
 		return {
 			...state,
 			friendsData: [ ...state.friendsData, ...action.friendsData ],
@@ -32,13 +27,6 @@ function friendsReducer(state = initialState, action) {
 
 
 
-
-export function updateNewFriendSeekTextAC (text) {
-	return {
-		type: UPDATE_NEW_FRIENDS_SEEK_TEXT,
-		newText: text,
-	}
-}
 
 
 export function setFriendsAC(friendsData) {

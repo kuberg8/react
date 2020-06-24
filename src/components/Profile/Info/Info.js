@@ -104,7 +104,7 @@ function Info(props) {
 				</div>
 
 				{props.profile.lookingForAJob ?
-					<div>
+					<div className={inf.about}>
 						<b>My professional skills:</b> {props.profile.lookingForAJobDescription ? props.profile.lookingForAJobDescription : "---"}
 					</div>	
 					:

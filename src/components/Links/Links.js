@@ -20,12 +20,7 @@ function Links() {
             <div className={cl.item}>
                 Друзья
             </div>
-        </NavLink>
-        <NavLink to="music" activeClassName={cl.active}>
-        	<div className={cl.item}>
-        		Музыка
-        	</div>
-        </NavLink>
+        </NavLink>        
         <NavLink to="Users" activeClassName={cl.active}>
             <div className={cl.item}>
                 Пользователи
