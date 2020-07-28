@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {loginThunkCreator, logoutThunkCreator} from '../../redux/auth-reducer.js'
-import /*LoginAPIComponent*/ Login from /*'./LoginAPIComponent.js'*/ './Login.js'
+import Login from './Login.js'
 
 import {connect} from 'react-redux'
 
@@ -21,7 +21,7 @@ let mapDispatchToProps = (dispatch) => {
 }
 
 
-const LoginContainer = connect(mapStateToProps, mapDispatchToProps)(/*LoginAPIComponent*/ Login);
+const LoginContainer = connect(mapStateToProps, mapDispatchToProps)(Login);
 
 
 export default LoginContainer
