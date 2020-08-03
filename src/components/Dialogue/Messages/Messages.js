@@ -45,7 +45,11 @@ function Messages(props) {
 
 
 	function onSendSms(values) {
-		props.sendSms(values.messageText)
+		if(values.messageText != null) {
+			props.sendSms(values.messageText)
+			values.messageText = null
+		}
+		
 	};
 	
  

@@ -25,7 +25,7 @@ let reducers = combineReducers({
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleware)));
-
+window.store = store;
 
 //let store = createStore(reducers, applyMiddleware(thunkMiddleware));   - как было до использования хрумовского Redux DevTools
 //window.store = store;  - не нужен так как можно посмотреть данные State в Redux DevTools

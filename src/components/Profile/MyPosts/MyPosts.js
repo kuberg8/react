@@ -47,7 +47,11 @@ function MyPosts(props) {
 
 
 	function AddNewPost(value) {
-		props.addPost(value.postText) 
+		if (value.postText != null) {
+			props.addPost(value.postText)
+			value.postText = null			
+		}
+ 
 	}
 
 

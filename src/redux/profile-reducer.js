@@ -30,11 +30,15 @@ function profileReducer(state = initialState, action) {
 
 	if(action.type === ADD_POST) {
 		let newPost = {
-		id: 0,
+		id: 1,
 		name: "Rick",
 		text: action.postText,
 		likeCounts: 0,
 		};
+
+		for (var i = 0; i < state.postsData.length; i++) {
+			state.postsData[i].id += 1
+		}		
 
 		return {
 			...state,
@@ -44,6 +48,10 @@ function profileReducer(state = initialState, action) {
 	}  else if(action.type === DELETE_POST) {
 
 		state.postsData.splice(action.id, 1)
+		for (var i = action.id; i < state.postsData.length; i++) {
+			state.postsData[i].id -= 1
+		}
+
 		return {
 			...state,
 			postsData: [...state.postsData],
